@@ -83,7 +83,6 @@ pub type Id = u64;
 pub(crate) struct Window {
     pub id: Id,
     pub parent: Option<Id>,
-    pub visible: bool,
     // active is set to true when the begin_window is called on this window
     // and is going to be set to false at the end of each frame
     pub active: bool,
@@ -122,7 +121,6 @@ impl Window {
             vertical_scroll_bar_width: 0.,
             title_height,
             parent,
-            visible: true,
             was_active: false,
             active: false,
             painter: Painter::new(atlas),
